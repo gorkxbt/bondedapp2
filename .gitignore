@@ -45,4 +45,7 @@ next-env.d.ts
 *.swo
 
 # OS
-Thumbs.db 
+Thumbs.db
+
+# Separate animation project
+/animation 
