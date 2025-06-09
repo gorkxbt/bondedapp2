@@ -8,30 +8,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: {
-          50: '#fff7ed',
-          100: '#ffedd5',
-          200: '#fed7aa',
-          300: '#fdba74',
-          400: '#fb923c',
-          500: '#f97316',
-          600: '#ea580c',
-          700: '#c2410c',
-          800: '#9a3412',
-          900: '#7c2d12',
-        },
-        teal: {
-          400: '#008080',
-          500: '#00FFFF',
-        },
-        gold: {
-          400: '#F0E68C',
-          500: '#FFD700',
-        },
-        coral: {
-          400: '#FF7F50',
-          500: '#FFA500',
-        }
+        // Teddy Bear Color Palette
+        'teddy-brown': '#8B4513', // Main brown color
+        'teddy-light': '#D2B48C', // Light tan/cream
+        'teddy-dark': '#654321', // Dark brown
+        'teddy-cream': '#F5DEB3', // Wheat/cream color
+        'teddy-amber': '#FFBF00', // Warm amber
+        'teddy-cocoa': '#6F4E37', // Cocoa brown
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic':
+          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],

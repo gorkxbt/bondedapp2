@@ -15,7 +15,7 @@ const FloatingElements: React.FC = () => {
       {orbs.map((orb, index) => (
         <motion.div
           key={index}
-          className="absolute rounded-full bg-gradient-to-r from-primary-500/30 to-coral-500/30 backdrop-blur-sm"
+          className="absolute rounded-full bg-gradient-to-r from-solana-purple/30 to-solana-cyan/30 backdrop-blur-sm"
           style={{
             width: orb.size,
             height: orb.size,

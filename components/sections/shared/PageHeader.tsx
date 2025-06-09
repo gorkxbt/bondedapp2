@@ -35,7 +35,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({
       transition={{ duration: 0.8, delay, ease: "easeOut" }}
       className={`${alignmentClass} mb-12 z-10`}
     >
-      <h1 className={`${titleSizes[titleSize]} font-bold mb-4 bg-gradient-to-r from-gray-900 via-primary-600 to-yellow-500 bg-clip-text text-transparent`}>
+      <h1 className={`${titleSizes[titleSize]} font-bold mb-4 bg-gradient-to-r from-gray-900 via-solana-purple to-solana-cyan bg-clip-text text-transparent`}>
         {title}
       </h1>
       <p className={`text-xl text-gray-600 ${maxWidth} mx-auto px-8`}>

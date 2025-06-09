@@ -23,7 +23,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ type, text, delay = 0 }) => {
       <div
         className={`max-w-[80%] px-4 py-3 rounded-2xl text-sm ${
           isAssistant
-            ? 'bg-primary-100 text-primary-800 border border-primary-200'
+            ? 'bg-primary-50 text-solana-purple border border-primary-200'
             : 'bg-gray-100 text-gray-800 border border-gray-200'
         }`}
       >

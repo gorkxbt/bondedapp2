@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonded App Showcase</title>
+    <link href="https://fonts.googleapis.com/css2?family=Agrandir:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Agrandir', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            font-family: 'Agrandir', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .showcase-container {
+            display: flex;
+            gap: 100px;
+            align-items: center;
+            justify-content: center;
+            max-width: 1400px;
+            width: 100%;
+        }
+
+        .iphone {
+            width: 350px;
+            height: 700px;
+            background: #000;
+            border-radius: 45px;
+            padding: 6px;
+            position: relative;
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.25),
+                0 10px 20px rgba(0, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+
+
+        @keyframes phoneFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .iphone-screen {
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
+            border-radius: 40px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* iPhone notch */
+        .notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 130px;
+            height: 30px;
+            background: #000;
+            border-radius: 0 0 15px 15px;
+            z-index: 10;
+        }
+
+        /* App header */
+        .app-header {
+            height: 90px;
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            padding-top: 35px;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .app-logo {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .app-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* App content area */
+        .app-content {
+            flex: 1;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        /* Feature 1: Onboarding */
+        .onboarding-screen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .welcome-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #f97316, #ff7f50);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            box-shadow: 0 10px 25px rgba(249, 115, 22, 0.3);
+        }
+
+        .onboarding-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+
+        .onboarding-subtitle {
+            font-size: 14px;
+            color: #6b7280;
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+
+        .connection-items {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .connection-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            background: #f9fafb;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .connection-icon {
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(45deg, #f97316, #ffd700);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: white;
+        }
+
+        .connection-text {
+            font-size: 14px;
+            color: #374151;
+            font-weight: 500;
+        }
+
+        /* Feature 2: Tracking */
+        .tracking-screen {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .tracking-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .tracking-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+
+        .tracking-subtitle {
+            font-size: 13px;
+            color: #6b7280;
+        }
+
+        .activity-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .activity-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: #f9fafb;
+            border-radius: 15px;
+            border-left: 4px solid;
+        }
+
+        .activity-item:nth-child(1) { border-left-color: #f97316; }
+        .activity-item:nth-child(2) { border-left-color: #ffd700; }
+        .activity-item:nth-child(3) { border-left-color: #ff7f50; }
+        .activity-item:nth-child(4) { border-left-color: #ffa500; }
+
+        .activity-icon {
+            font-size: 18px;
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(45deg, #f97316, #ffd700);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .activity-details {
+            flex: 1;
+        }
+
+        .activity-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 2px;
+        }
+
+        .activity-time {
+            font-size: 12px;
+            color: #6b7280;
+        }
+
+        .activity-status {
+            font-size: 11px;
+            padding: 3px 8px;
+            border-radius: 6px;
+            background: #dcfce7;
+            color: #166534;
+            font-weight: 500;
+        }
+
+        /* Feature 3: Earning */
+        .earning-screen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .earning-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #ffd700, #ffa500);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+            animation: coinFloat 2s ease-in-out infinite;
+        }
+
+        @keyframes coinFloat {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-5px) scale(1.05); }
+        }
+
+        .earning-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+
+        .earning-amount {
+            font-size: 32px;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ffd700, #ffa500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+        }
+
+        .streak-info {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            gap: 10px;
+        }
+
+        .streak-item {
+            flex: 1;
+            text-align: center;
+            padding: 15px 10px;
+            background: #f9fafb;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .streak-number {
+            font-size: 18px;
+            font-weight: bold;
+            color: #f97316;
+            margin-bottom: 4px;
+        }
+
+        .streak-label {
+            font-size: 11px;
+            color: #6b7280;
+            font-weight: 500;
+        }
+
+        /* Home indicator */
+        .home-indicator {
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 134px;
+            height: 5px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 3px;
+        }
+
+        /* Decorative background elements */
+        .decorative-element {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(45deg, rgba(249, 115, 22, 0.1), rgba(255, 127, 80, 0.1));
+            filter: blur(40px);
+            animation: floatOrb 4s ease-in-out infinite;
+        }
+
+        .decorative-element:nth-child(1) {
+            width: 200px;
+            height: 200px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .decorative-element:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            bottom: 15%;
+            right: 15%;
+            animation-delay: -2s;
+        }
+
+        @keyframes floatOrb {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-30px) scale(1.1); }
+        }
+
+        @media (max-width: 1024px) {
+            .showcase-container {
+                flex-direction: column;
+                gap: 60px;
+            }
+            
+            .iphone {
+                width: 300px;
+                height: 600px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .showcase-container {
+                gap: 30px;
+            }
+            
+            .iphone {
+                width: 280px;
+                height: 560px;
+            }
+            
+            .app-content {
+                padding: 20px 15px;
+            }
+        }
+
+        .phone-title {
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: 'Agrandir', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: #111827;
+        }
+    </style>
+</head>
+<body>
+    <div class="decorative-element"></div>
+    <div class="decorative-element"></div>
+    
+    <div class="showcase-container">
+        <!-- iPhone 1: Onboarding -->
+        <div>
+            <div class="phone-title">1. Easy Account Setup & Onboarding</div>
+            <div class="iphone">
+            <div class="iphone-screen">
+                <div class="notch"></div>
+                <div class="app-header">
+                    <div class="app-logo">
+                        <img src="public/logo.jpg" alt="Bonded Logo">
+                    </div>
+                </div>
+                <div class="app-content">
+                    <div class="onboarding-screen">
+                        <div class="welcome-icon">👋</div>
+                        <div>
+                            <div class="onboarding-title">Welcome to Bonded!</div>
+                            <div class="onboarding-subtitle">Let's get you set up in just a few steps</div>
+                        </div>
+                        <div class="connection-items">
+                            <div class="connection-item">
+                                <div class="connection-icon">👤</div>
+                                <div class="connection-text">Connect Contacts</div>
+                            </div>
+                            <div class="connection-item">
+                                <div class="connection-icon">💬</div>
+                                <div class="connection-text">Link Messaging Apps</div>
+                            </div>
+                            <div class="connection-item">
+                                <div class="connection-icon">📱</div>
+                                <div class="connection-text">Link Social Medias</div>
+                            </div>
+                            <div class="connection-item">
+                                <div class="connection-icon">💳</div>
+                                <div class="connection-text">Setup Solana Wallet</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="home-indicator"></div>
+            </div>
+        </div>
+        </div>
+
+        <!-- iPhone 2: Tracking -->
+        <div>
+            <div class="phone-title">2. Automatic Interaction Tracking</div>
+            <div class="iphone">
+            <div class="iphone-screen">
+                <div class="notch"></div>
+                <div class="app-header">
+                    <div class="app-logo">
+                        <img src="public/logo.jpg" alt="Bonded Logo">
+                    </div>
+                </div>
+                <div class="app-content">
+                    <div class="tracking-screen">
+                        <div class="tracking-header">
+                            <div class="tracking-title">Today's Activity</div>
+                            <div class="tracking-subtitle">Automatically tracked interactions</div>
+                        </div>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-icon">📱</div>
+                                <div class="activity-details">
+                                    <div class="activity-name">Call with Sarah</div>
+                                    <div class="activity-time">2:30 PM • 15 min</div>
+                                </div>
+                                <div class="activity-status">Tracked</div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">💬</div>
+                                <div class="activity-details">
+                                    <div class="activity-name">Messages with Mike</div>
+                                    <div class="activity-time">1:15 PM • 8 messages</div>
+                                </div>
+                                <div class="activity-status">Tracked</div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">📄</div>
+                                <div class="activity-details">
+                                    <div class="activity-name">X Comment with @alex</div>
+                                    <div class="activity-time">11:45 AM • 3 replies</div>
+                                </div>
+                                <div class="activity-status">Tracked</div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">🤝</div>
+                                <div class="activity-details">
+                                    <div class="activity-name">Coffee Meetup with Jenny</div>
+                                    <div class="activity-time">10:00 AM • 2 hours</div>
+                                </div>
+                                <div class="activity-status">Manual</div>
+                            </div>
+                        </div>
+                        <div style="margin-top: 20px; text-align: center;">
+                            <div style="font-size: 14px; color: #6b7280; margin-bottom: 10px;">Weekly Progress</div>
+                            <div style="display: flex; justify-content: space-between; gap: 8px;">
+                                <div style="flex: 1; height: 6px; background: #f97316; border-radius: 3px;"></div>
+                                <div style="flex: 1; height: 6px; background: #ffd700; border-radius: 3px;"></div>
+                                <div style="flex: 1; height: 6px; background: #ff7f50; border-radius: 3px;"></div>
+                                <div style="flex: 1; height: 6px; background: #ffa500; border-radius: 3px;"></div>
+                                <div style="flex: 1; height: 6px; background: #e5e7eb; border-radius: 3px;"></div>
+                                <div style="flex: 1; height: 6px; background: #e5e7eb; border-radius: 3px;"></div>
+                                <div style="flex: 1; height: 6px; background: #e5e7eb; border-radius: 3px;"></div>
+                            </div>
+                            <div style="font-size: 12px; color: #9ca3af; margin-top: 8px;">4/7 days active this week</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="home-indicator"></div>
+            </div>
+        </div>
+        </div>
+
+        <!-- iPhone 3: Earning -->
+        <div>
+            <div class="phone-title">3. Build Streaks & Earn $BONDED</div>
+            <div class="iphone">
+            <div class="iphone-screen">
+                <div class="notch"></div>
+                <div class="app-header">
+                    <div class="app-logo">
+                        <img src="public/logo.jpg" alt="Bonded Logo">
+                    </div>
+                </div>
+                <div class="app-content">
+                    <div class="earning-screen">
+                        <div class="earning-icon">💰</div>
+                        <div>
+                            <div class="earning-title">Your Earnings</div>
+                            <div class="earning-amount">247 $BONDED</div>
+                        </div>
+                        <div class="streak-info">
+                            <div class="streak-item">
+                                <div class="streak-number">7</div>
+                                <div class="streak-label">Day Streak</div>
+                            </div>
+                            <div class="streak-item">
+                                <div class="streak-number">3</div>
+                                <div class="streak-label">Active Bonds</div>
+                            </div>
+                            <div class="streak-item">
+                                <div class="streak-number">15</div>
+                                <div class="streak-label">Bonus Earned</div>
+                            </div>
+                        </div>
+                        <div style="margin-top: 25px; width: 100%;">
+                            <div style="font-size: 14px; color: #6b7280; margin-bottom: 15px; text-align: center;">Recent Rewards</div>
+                            <div style="display: flex; flex-direction: column; gap: 8px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; background: #f9fafb; border-radius: 8px; border-left: 3px solid #f97316;">
+                                    <span style="font-size: 12px; color: #374151;">7-day milestone</span>
+                                    <span style="font-size: 12px; font-weight: bold; color: #f97316;">+50 $BONDED</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; background: #f9fafb; border-radius: 8px; border-left: 3px solid #ffd700;">
+                                    <span style="font-size: 12px; color: #374151;">Daily interaction</span>
+                                    <span style="font-size: 12px; font-weight: bold; color: #ffa500;">+10 $BONDED</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; background: #f9fafb; border-radius: 8px; border-left: 3px solid #ff7f50;">
+                                    <span style="font-size: 12px; color: #374151;">New bond created</span>
+                                    <span style="font-size: 12px; font-weight: bold; color: #ff7f50;">+25 $BONDED</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="home-indicator"></div>
+            </div>
+        </div>
+        </div>
+    </div>
+</body>
+</html> 

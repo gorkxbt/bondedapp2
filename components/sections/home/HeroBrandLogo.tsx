@@ -10,7 +10,7 @@ interface HeroBrandLogoProps {
 }
 
 const HeroBrandLogo: React.FC<HeroBrandLogoProps> = ({ 
-  letter = 'B', 
+  letter = 'M', 
   size = 'md',
   delay = 0 
 }) => {
@@ -27,7 +27,7 @@ const HeroBrandLogo: React.FC<HeroBrandLogoProps> = ({
       transition={{ duration: 0.8, delay, ease: "easeOut" }}
       className="mb-8"
     >
-      <div className={`${sizeClasses[size]} bg-gradient-to-r from-primary-500 to-yellow-500 rounded-3xl flex items-center justify-center font-bold text-white mx-auto shadow-xl`}>
+      <div className={`${sizeClasses[size]} bg-gradient-to-r from-solana-purple to-solana-cyan rounded-3xl flex items-center justify-center font-bold text-white mx-auto shadow-xl`}>
         {letter}
       </div>
     </motion.div>

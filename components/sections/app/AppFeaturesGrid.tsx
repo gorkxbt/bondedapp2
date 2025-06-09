@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { MessageCircle, Flame, Coins } from 'lucide-react'
+import { Bell, Brain, Coins } from 'lucide-react'
 import AppFeatureCard from './AppFeatureCard'
 
 interface AppFeaturesGridProps {
@@ -12,19 +12,19 @@ interface AppFeaturesGridProps {
 const AppFeaturesGrid: React.FC<AppFeaturesGridProps> = ({ delay = 0.6 }) => {
   const features = [
     {
-      icon: MessageCircle,
-      title: 'Smart Conversations',
-      description: 'Get personalized conversation starters and message suggestions'
+      icon: Bell,
+      title: 'Trenches Notifications',
+      description: 'Get instant alerts about emerging narratives, bonded tokens, and high-volume moments in Solana'
     },
     {
-      icon: Flame,
-      title: 'Streak Tracking',
-      description: 'Monitor your social streaks and never lose touch again'
+      icon: Brain,
+      title: 'AI-Powered Insights',
+      description: 'Buddy analyzes patterns and provides context on why trends are gaining traction'
     },
     {
       icon: Coins,
-      title: 'Earn Rewards',
-      description: 'Get $BONDED tokens for maintaining social connections'
+      title: 'Earn $BUDDY Tokens',
+      description: 'Get rewarded for engaging with the app and contributing to the community'
     }
   ]
 

@@ -19,7 +19,7 @@ const AppFeatureCard: React.FC<AppFeatureCardProps> = ({
   variant = 'primary' 
 }) => {
   const variantClasses = {
-    primary: 'bg-gradient-to-r from-primary-400 to-primary-500',
+    primary: 'bg-gradient-to-r from-solana-purple to-solana-cyan',
     secondary: 'bg-gradient-to-r from-gray-400 to-gray-500'
   }
 

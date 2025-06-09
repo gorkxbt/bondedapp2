@@ -10,9 +10,9 @@ const Header: React.FC = () => {
   const { currentPage, setCurrentPage } = useNavigation()
 
   const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'app', label: 'App' },
-    { id: 'about', label: 'About' },
+    { id: 'home', label: 'Features' },
+    { id: 'app', label: 'Experience' },
+    { id: 'about', label: 'Learn More' },
   ] as const
 
   return (
@@ -20,29 +20,40 @@ const Header: React.FC = () => {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center p-6 lg:px-16 bg-white/90 backdrop-blur-lg border-b border-gray-200 shadow-sm"
+      className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-b border-gray-100 shadow-lg"
     >
-      <Logo />
-      
-      <nav className="flex items-center gap-8">
-        {navItems.map((item) => (
-          <motion.button
-            key={item.id}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => setCurrentPage(item.id)}
-            className={`font-medium transition-colors duration-200 ${
-              currentPage === item.id
-                ? 'text-primary-500 border-b-2 border-primary-500 pb-1'
-                : 'text-gray-700 hover:text-primary-500'
-            }`}
-          >
-            {item.label}
-          </motion.button>
-        ))}
-        
-        <DownloadButton />
-      </nav>
+      <div className="max-w-7xl mx-auto px-6 py-4">
+        <div className="grid grid-cols-3 items-center">
+          {/* Left - Logo */}
+          <div className="flex justify-start">
+            <Logo />
+          </div>
+          
+          {/* Center - Beta Button */}
+          <div className="flex justify-center">
+            <DownloadButton />
+          </div>
+          
+          {/* Right - Navigation */}
+          <nav className="flex justify-end items-center gap-6">
+            {navItems.map((item) => (
+              <motion.button
+                key={item.id}
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setCurrentPage(item.id)}
+                className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${
+                  currentPage === item.id
+                    ? 'bg-gradient-to-r from-teddy-brown to-teddy-amber text-white shadow-lg'
+                    : 'text-gray-700 hover:text-teddy-brown hover:bg-gray-50'
+                }`}
+              >
+                {item.label}
+              </motion.button>
+            ))}
+          </nav>
+        </div>
+      </div>
     </motion.header>
   )
 }

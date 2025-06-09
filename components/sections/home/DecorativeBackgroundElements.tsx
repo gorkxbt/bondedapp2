@@ -47,7 +47,7 @@ const DecorativeBackgroundElements: React.FC<DecorativeBackgroundElementsProps> 
           className={`
             absolute ${getPositionClasses(element.position)} 
             ${getSizeClasses(element.size)} 
-            bg-gradient-to-r from-primary-400/${element.opacity} to-yellow-400/${element.opacity} 
+            bg-gradient-to-r from-teddy-brown/${element.opacity} to-teddy-amber/${element.opacity} 
             rounded-full blur-3xl z-${element.zIndex}
           `}
         />

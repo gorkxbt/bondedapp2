@@ -25,8 +25,8 @@ const HeroCTAButton: React.FC<HeroCTAButtonProps> = ({
   }
 
   const variantClasses = {
-    primary: 'bg-gradient-to-r from-primary-500 to-yellow-500 text-white',
-    secondary: 'bg-white text-primary-600 border-2 border-primary-500'
+    primary: 'bg-gradient-to-r from-solana-purple to-solana-cyan text-white',
+    secondary: 'bg-white text-solana-purple border-2 border-solana-purple'
   }
 
   return (

@@ -29,7 +29,7 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose }) => {
     setIsSubmitting(false)
     
     setTimeout(() => {
-      showToast('🎉 Welcome to the Bonded family!')
+      showToast('🤖 Welcome to the MyBuddy family!')
       onClose()
       setIsSubmitted(false)
       setEmail('')
@@ -66,8 +66,8 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose }) => {
               className="bg-white rounded-3xl p-8 max-w-md w-full shadow-2xl border border-gray-100 relative overflow-hidden mx-auto my-auto"
             >
               {/* Background decoration */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-100 to-coral-100 rounded-full blur-3xl -translate-y-16 translate-x-16"></div>
-              <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-teal-100 to-gold-100 rounded-full blur-2xl translate-y-12 -translate-x-12"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-100 to-solana-cyan/20 rounded-full blur-3xl -translate-y-16 translate-x-16"></div>
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-solana-purple/20 to-primary-100 rounded-full blur-2xl translate-y-12 -translate-x-12"></div>
 
               {/* Close button */}
               <button
@@ -87,7 +87,7 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose }) => {
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
                         transition={{ delay: 0.2, type: "spring" }}
-                        className="w-16 h-16 bg-gradient-to-r from-primary-500 to-coral-500 rounded-2xl flex items-center justify-center text-white mx-auto mb-4"
+                        className="w-16 h-16 bg-gradient-to-r from-solana-purple to-solana-cyan rounded-2xl flex items-center justify-center text-white mx-auto mb-4"
                       >
                         <Sparkles size={32} />
                       </motion.div>
@@ -107,7 +107,7 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose }) => {
                         transition={{ delay: 0.4 }}
                         className="text-gray-600"
                       >
-                        Be among the first to experience Bonded and start earning $BONDED tokens!
+                        Be among the first to get MyBuddy and never miss the next big thing in Solana trenches!
                       </motion.p>
                     </div>
 
@@ -119,24 +119,24 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose }) => {
                       className="space-y-3 mb-6"
                     >
                       <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
-                          <Users size={16} className="text-orange-600" />
+                        <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
+                          <Users size={16} className="text-solana-purple" />
                         </div>
-                        <span className="text-sm text-gray-700">Early access to all features</span>
+                        <span className="text-sm text-gray-700">Real-time trenches notifications</span>
                       </div>
                       
                       <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
-                          <Zap size={16} className="text-orange-600" />
+                        <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
+                          <Zap size={16} className="text-solana-purple" />
                         </div>
-                        <span className="text-sm text-gray-700">Bonus $BONDED tokens for beta testers</span>
+                        <span className="text-sm text-gray-700">Bonus $BUDDY tokens for early adopters</span>
                       </div>
                       
                       <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
-                          <Sparkles size={16} className="text-orange-600" />
+                        <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
+                          <Sparkles size={16} className="text-solana-purple" />
                         </div>
-                        <span className="text-sm text-gray-700">Exclusive beta tester rewards</span>
+                        <span className="text-sm text-gray-700">AI-powered insights and alerts</span>
                       </div>
                     </motion.div>
 
@@ -157,7 +157,7 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose }) => {
                           placeholder="Enter your email address"
                           required
                           disabled={isSubmitting}
-                          className="w-full pl-11 pr-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
+                          className="w-full pl-11 pr-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-solana-purple focus:border-transparent transition-all"
                         />
                       </div>
                       
@@ -166,7 +166,7 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose }) => {
                         disabled={isSubmitting || !email}
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
-                        className="w-full py-3 bg-gradient-to-r from-primary-500 to-coral-500 text-white font-semibold rounded-2xl hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="w-full py-3 bg-gradient-to-r from-solana-purple to-solana-cyan text-white font-semibold rounded-2xl hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                       >
                         {isSubmitting ? (
                           <div className="flex items-center justify-center gap-2">
@@ -213,7 +213,7 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose }) => {
                     
                     <h3 className="text-xl font-bold text-gray-900 mb-2">You're In!</h3>
                     <p className="text-gray-600 mb-4">
-                      Welcome to the Bonded beta waitlist. We'll send you an invite soon!
+                      Welcome to the MyBuddy beta waitlist. Buddy will reach out soon!
                     </p>
                     <div className="text-sm text-gray-500">
                       Check your email: <strong>{email}</strong>

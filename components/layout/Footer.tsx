@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
           <motion.a
             href="#"
             whileHover={{ scale: 1.1, y: -3 }}
-            className="w-12 h-12 rounded-full bg-gray-200 backdrop-blur-sm flex items-center justify-center text-gray-700 hover:bg-primary-500 hover:text-white transition-colors duration-300"
+            className="w-12 h-12 rounded-full bg-gray-200 backdrop-blur-sm flex items-center justify-center text-gray-700 hover:bg-solana-purple hover:text-white transition-colors duration-300"
             title="Twitter"
           >
             <Twitter size={24} />
@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
           <motion.a
             href="#"
             whileHover={{ scale: 1.1, y: -3 }}
-            className="w-12 h-12 rounded-full bg-gray-200 backdrop-blur-sm flex items-center justify-center text-gray-700 hover:bg-primary-500 hover:text-white transition-colors duration-300"
+            className="w-12 h-12 rounded-full bg-gray-200 backdrop-blur-sm flex items-center justify-center text-gray-700 hover:bg-solana-purple hover:text-white transition-colors duration-300"
             title="iOS App Store"
           >
             <Smartphone size={24} />
@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
           viewport={{ once: true }}
           className="text-gray-600 text-sm"
         >
-          © 2025 Bonded. All rights reserved.
+          © 2025 MyBuddy. All rights reserved.
         </motion.p>
       </div>
     </footer>

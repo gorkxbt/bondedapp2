@@ -3,8 +3,8 @@ import React from 'react'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Bonded - Build Meaningful Connections, Earn Crypto',
-  description: 'Earn crypto rewards for staying connected with friends, family, and colleagues. Powered by AI to strengthen your social bonds.',
+  title: 'MyBuddy - Your AI Companion for Solana Trenches',
+  description: 'Never miss the next big thing in Solana. Get real-time trenches notifications, AI-powered insights, and alerts for narratives, bonded tokens, and high-volume moments.',
 }
 
 export default function RootLayout({
