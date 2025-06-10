@@ -5,7 +5,6 @@ import { Bell, Brain, Coins, Target, TrendingUp, Zap } from 'lucide-react'
 import AppPageHero from '@/components/sections/app/AppPageHero'
 import AppDemoSection from '@/components/sections/app/AppDemoSection'
 import CapabilityCard from '@/components/ui/CapabilityCard'
-import CTASection from '@/components/ui/CTASection'
 import DecorativeBackgroundElements from '@/components/sections/home/DecorativeBackgroundElements'
 import { motion } from 'framer-motion'
 
@@ -105,14 +104,6 @@ const AppPage: React.FC = () => {
           </div>
         </div>
       </div>
-
-      {/* CTA Section */}
-      <CTASection
-        badgeText="🧸 Experience the Future"
-        title="Ready to Experience MyBuddy?"
-        subtitle="Join thousands of traders already using AI to stay ahead in the Solana trenches"
-        buttonText="Start Free Trial 🚀"
-      />
 
       <DecorativeBackgroundElements />
     </div>

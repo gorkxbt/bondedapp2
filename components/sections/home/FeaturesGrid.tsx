@@ -33,7 +33,7 @@ const FeaturesGrid: React.FC<FeaturesGridProps> = ({ delay = 1 }) => {
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay, duration: 0.8 }}
-      className="grid md:grid-cols-3 gap-6 pt-12"
+      className="grid md:grid-cols-3 gap-6 pt-20"
     >
       {features.map((feature, index) => (
         <FeatureCard

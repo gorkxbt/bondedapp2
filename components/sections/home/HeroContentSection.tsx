@@ -2,7 +2,6 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import HeroTagline from './HeroTagline'
 import HeroMainTitle from './HeroMainTitle'
 import HeroDescription from './HeroDescription'
 import HeroActionButtons from './HeroActionButtons'
@@ -11,19 +10,18 @@ import FeaturesGrid from './FeaturesGrid'
 const HeroContentSection: React.FC = () => {
   return (
     <motion.div
-      initial={{ opacity: 0, x: -50 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.8 }}
-      className="space-y-8"
+      initial={{ opacity: 0, y: 30, scale: 0.95 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ duration: 1, delay: 0.3 }}
+      className="space-y-8 text-center"
     >
       <div className="space-y-6">
-        <HeroTagline delay={0.2} />
-        <HeroMainTitle delay={0.4} />
-        <HeroDescription delay={0.6} />
+        <HeroMainTitle delay={0.5} />
+        <HeroDescription delay={0.7} />
       </div>
 
-      <HeroActionButtons delay={0.8} />
-      <FeaturesGrid delay={1} />
+      <HeroActionButtons delay={0.9} />
+      <FeaturesGrid delay={1.1} />
     </motion.div>
   )
 }

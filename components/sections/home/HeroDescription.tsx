@@ -13,7 +13,7 @@ const HeroDescription: React.FC<HeroDescriptionProps> = ({ delay = 0.6 }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay, duration: 0.6 }}
-      className="text-xl text-gray-600 leading-relaxed max-w-xl"
+      className="text-xl text-gray-600 leading-relaxed max-w-xl mx-auto text-center"
     >
       MyBuddy is your AI-powered companion that keeps you ahead of emerging narratives, 
       bonded tokens, and high-volume moments in the Solana ecosystem.

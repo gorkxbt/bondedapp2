@@ -5,7 +5,6 @@ import AboutPageHero from '@/components/sections/about/AboutPageHero'
 import TabNavigation from '@/components/sections/about/TabNavigation'
 import MissionSection from '@/components/sections/about/MissionSection'
 import TechnologySection from '@/components/sections/about/TechnologySection'
-import CTASection from '@/components/ui/CTASection'
 
 const AboutPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState('mission')
@@ -21,13 +20,7 @@ const AboutPage: React.FC = () => {
         {activeTab === 'technology' && <TechnologySection />}
       </div>
 
-      {/* Bottom CTA */}
-      <CTASection
-        badgeText="🧸 Ready to Join MyBuddy?"
-        title="Ready to Join the Future?"
-        subtitle="Be part of the next generation of intelligent trading with your AI companion"
-        buttonText="Join Beta Now 🚀"
-      />
+
     </div>
   )
 }
